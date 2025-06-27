@@ -1,0 +1,32 @@
+# 빌드 디렉터리 무시
+Debug/
+Release/
+x64/
+*.obj
+*.lib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.idb
+
+# Visual Studio 관련
+.vs/
+*.suo
+*.user
+*.VC.db
+*.opendb
+
+# CMake 관련
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# 로그, 임시 파일
+*.log
+*.tmp
+
+# 백업 파일
+*~
+*.bak
