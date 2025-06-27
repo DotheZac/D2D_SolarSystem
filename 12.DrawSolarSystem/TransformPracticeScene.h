@@ -6,7 +6,7 @@
 #include <wrl/client.h>
 #include <d2d1_1.h>
 
-constexpr int  MAX_SIZE = 3;
+constexpr int  MAX_SIZE = 8;
 
 class BoxObject;
 

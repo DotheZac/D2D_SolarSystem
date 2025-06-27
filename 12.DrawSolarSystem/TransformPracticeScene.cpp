@@ -27,7 +27,7 @@ public:
 
         //m_transform.SetPivotPreset(D2DTM::PivotPreset::TopLeft, size);
         //m_transform.SetPivotPreset(D2DTM::PivotPreset::BottomRight, size);
-        m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
+        //m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
 
     }
 
@@ -197,6 +197,11 @@ void TransformPracticeScene::SetUp(HWND hWnd)
     SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/sun.png", *m_BitmapPtr[0].GetAddressOf());
     SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/earth.png", *m_BitmapPtr[1].GetAddressOf());
     SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/moon.png", *m_BitmapPtr[2].GetAddressOf());
+    SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/mercury.png", *m_BitmapPtr[3].GetAddressOf());
+    SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/venus.png", *m_BitmapPtr[4].GetAddressOf());
+    SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/mars.png", *m_BitmapPtr[5].GetAddressOf());
+    SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/jupiter.png", *m_BitmapPtr[6].GetAddressOf());
+    SolarSystemRenderer::Instance().CreateBitmapFromFile(L"../Resource/neptune.png", *m_BitmapPtr[7].GetAddressOf());
 
     RECT rc;
     if (::GetClientRect(hWnd, &rc))
@@ -212,14 +217,31 @@ void TransformPracticeScene::SetUp(HWND hWnd)
     m_BoxObjects[0]->SetLeader(true);
     m_SelectedBoxObjects.push_back(m_BoxObjects[0]);
 
-    AddBoxObjects(D2D1_POINT_2F{ 750.f , 450.f }, 1);
+    AddBoxObjects(D2D1_POINT_2F{ 324.f , 666.f }, 1);
     m_BoxObjects[1]->SetParent(m_BoxObjects[0]);
 
-    AddBoxObjects(D2D1_POINT_2F{ 150.f , 450.f }, 1);
-    m_BoxObjects[2]->SetParent(m_BoxObjects[0]);
+    AddBoxObjects(D2D1_POINT_2F{ 424.f , 666.f }, 2);
+    m_BoxObjects[2]->SetParent(m_BoxObjects[1]);
+    m_BoxObjects[2]->GetTransform()->SetScale(MYHelper::Vector2F(0.5f, 0.5f));
 
-    AddBoxObjects(D2D1_POINT_2F{ 850.f , 450.f }, 2);
-    m_BoxObjects[3]->SetParent(m_BoxObjects[1]);
+    AddBoxObjects(D2D1_POINT_2F{ 600.f , 450.f }, 3);
+    m_BoxObjects[3]->SetParent(m_BoxObjects[0]);
+    m_BoxObjects[3]->GetTransform()->SetScale(MYHelper::Vector2F(0.5f, 0.5f));
+
+    AddBoxObjects(D2D1_POINT_2F{ 550.f , 623.f }, 4);
+    m_BoxObjects[4]->SetParent(m_BoxObjects[0]);
+
+    AddBoxObjects(D2D1_POINT_2F{ 150.f , 450.f }, 5);
+    m_BoxObjects[5]->SetParent(m_BoxObjects[0]);
+
+    AddBoxObjects(D2D1_POINT_2F{ 275.f , 146.f }, 6);
+    m_BoxObjects[6]->SetParent(m_BoxObjects[0]);
+    m_BoxObjects[6]->GetTransform()->SetScale(MYHelper::Vector2F(2.f, 2.f));
+
+    AddBoxObjects(D2D1_POINT_2F{ 650.f , 100.f }, 7);
+    m_BoxObjects[7]->SetParent(m_BoxObjects[0]);
+    m_BoxObjects[7]->GetTransform()->SetScale(MYHelper::Vector2F(1.5f, 1.5f));
+
 }
 
 void TransformPracticeScene::Tick(float deltaTime)
