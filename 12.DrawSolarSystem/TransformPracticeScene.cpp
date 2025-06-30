@@ -27,7 +27,7 @@ public:
 
         //m_transform.SetPivotPreset(D2DTM::PivotPreset::TopLeft, size);
         //m_transform.SetPivotPreset(D2DTM::PivotPreset::BottomRight, size);
-        //m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
+        m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
 
     }
 

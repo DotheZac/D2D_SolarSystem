@@ -39,8 +39,8 @@ namespace D2DTM
 		
 		const auto T2 = D2D1::Matrix3x2F::Translation(m_position.x, m_position.y);
 
-		m_matrixLocal = P * S * R * T1 * T2;
-		//m_matrixLocal = S * R * T2;
+		//m_matrixLocal = P * S * R * T1 * T2;
+		m_matrixLocal = S * R * T2;
 
 		if (m_parent)
 			m_matrixWorld = m_matrixLocal * m_parent->GetWorldMatrix();
