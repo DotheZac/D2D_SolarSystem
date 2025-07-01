@@ -26,8 +26,8 @@ public:
         D2D1_SIZE_F size = { m_rect.right - m_rect.left, m_rect.bottom - m_rect.top };
 
         //m_transform.SetPivotPreset(D2DTM::PivotPreset::TopLeft, size);
-        m_transform.SetPivotPreset(D2DTM::PivotPreset::BottomRight, size);
-        //m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
+        //m_transform.SetPivotPreset(D2DTM::PivotPreset::BottomRight, size);
+        m_transform.SetPivotPreset(D2DTM::PivotPreset::Center, size);
 
     }
 
